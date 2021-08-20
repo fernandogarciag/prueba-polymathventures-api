@@ -11,9 +11,7 @@ var corsOptions = {
 app.use(cors(corsOptions));
 
 const db = require("./app/models");
-db.sequelize.sync({ force: true }).then(() => {
-  console.log("Drop and re-sync db.");
-});
+db.sequelize.sync();
 
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -25,6 +23,6 @@ app.use(express.urlencoded({ extended: true }));
 require("./app/routes")(app);
 
 // set port, listen for requests
-app.listen(config.APP_PORT, config.APP_HOST, () => {
-  console.log(`App listening on http://${config.APP_HOST}:${config.APP_PORT}`);
+app.listen(config.APP_PORT, () => {
+  console.log(`App listening on port ${config.APP_PORT}`);
 });
