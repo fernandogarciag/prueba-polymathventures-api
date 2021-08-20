@@ -20,9 +20,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // simple route
+app.get("/", function (req, res) {
+  res.send("<h1>Hello World!</h1>");
+});
 require("./app/routes")(app);
 
 // set port, listen for requests
-app.listen(config.APP_PORT, () => {
-  console.log(`App listening on port ${config.APP_PORT}`);
+app.listen(config.APP_PORT || 3000, () => {
+  console.log(`App listening`);
 });
