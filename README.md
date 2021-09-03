@@ -8,6 +8,7 @@ Configuración de la aplicación en un ambiente de pruebas:
 3. Cambiar las configuraciones del archivo .env por su propia base de datos:
 
 - APP_PORT: El puerto que usara su aplicación
+- WEB_URL: La url de la aplicación web en react
 - DB_CONNECTION: Su tipo de base de datos compatible con sequelize
 - DB_HOST: La url de su base de datos
 - DB_PORT: El puerto de su base de datos
